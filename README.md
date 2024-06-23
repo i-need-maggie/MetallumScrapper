@@ -16,7 +16,7 @@ As I keep doing the refinements and tests over the published version, the proces
 * **A webbased API**: There is learning curve involved, and I will try to create a web application (simple, of course) for better user experience.
 
 ## Essential Requirements
-'''python
+'''{python}
 selenium==4.21.0
 pandas==2.2.1
 '''
