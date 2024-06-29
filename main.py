@@ -6,7 +6,12 @@ def safe_write(filename, folder_path=None):
     if folder_path is None:
         return filename
     else:
-        return os.path.join(os.makedirs(folder_path, exist_ok=True),filename)
+        try:
+            os.makedirs(folder_path, exist_ok=True)
+        except OSError:
+            print(f"cant create folder {folder_path}, resorting to root")
+            folder_path = os.getcwd()
+        return os.path.join(folder_path,filename)
     
 def run(url, write_path=None, pull_discogs=False):
     
