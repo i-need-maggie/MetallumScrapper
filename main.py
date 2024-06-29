@@ -18,7 +18,7 @@ def main(base_url, write_path=None):
     pbc = PoolDiscogCrawler(pool, page_wait=1)
     out = pbc.thread_crawl(return_merged=True)
     out = numeric_review(out, rev_col='Reviews', expand=True)
-    out.to_csv('Discography.csv', index=False, encoding='utf-16')
+    out.to_csv(safe_write('Discography.csv'folder_path), index=False, encoding='utf-16')
 
 
 
