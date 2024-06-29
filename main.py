@@ -6,7 +6,7 @@ def safe_write(filename, folder_path=None):
     if folder_path is None:
         return filename
     else:
-        return os.path.join(os.makedirs(os.path.dirname(folder_path), exist_ok=True),filename)
+        return os.path.join(os.makedirs(folder_path, exist_ok=True),filename)
     
 def run(url, write_path=None, pull_discogs=False):
     
