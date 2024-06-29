@@ -10,7 +10,7 @@ def safe_write(filename, folder_path=None):
     
 def main(base_url, write_path=None):
     
-    band_pool = BandCrawler(base_url=BASE_URL, wait_time=2)
+    band_pool = BandCrawler(base_url=base_url, wait_time=2)
     band_pool._crawl_pool_meta()
     pool = band_pool.meta.copy()
     pool.to_csv(safe_write("Bands.csv",folder_path), index=False)
